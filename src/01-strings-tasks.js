@@ -276,8 +276,41 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const rank = value.slice(0, -1);
+  const suit = value.slice(-1);
+  let suitMult;
+  switch (suit) {
+    case '♣':
+      suitMult = 0;
+      break;
+    case '♦':
+      suitMult = 13;
+      break;
+    case '♥':
+      suitMult = 26;
+      break;
+    case '♠':
+      suitMult = 39;
+      break;
+    default:
+      throw new Error('Not implemented');
+  }
+
+  let unnumberValues;
+  if (rank === 'A') {
+    unnumberValues = 1;
+  } else if (rank === 'J') {
+    unnumberValues = 11;
+  } else if (rank === 'Q') {
+    unnumberValues = 12;
+  } else if (rank === 'K') {
+    unnumberValues = 13;
+  } else {
+    unnumberValues = parseInt(rank, 10);
+  }
+
+  return suitMult + unnumberValues - 1;
 }
 
 module.exports = {
