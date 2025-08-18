@@ -240,6 +240,22 @@ function reverseInteger(/* num */) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(/* ccn */) {
+  // let controlSum = 0;
+  // let result = 0;
+
+  // for (let i = 0; i < ccn.length; i += 1) {
+  //   let digit = ccn[i];
+  //   if (i % 2 === 0) {
+  //     digit *= 2;
+  //     if (digit > 9) {
+  //       digit -= 9;
+  //     }
+  //   }
+  //   controlSum += digit;
+  // }
+  // result = controlSum % 10;
+  // if (result === 0) return true;
+  // return false;
   throw new Error('Not implemented');
 }
 
