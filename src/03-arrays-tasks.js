@@ -34,9 +34,34 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  // throw new Error('Not implemented');
+  // function generateOdds(len) {
+  const result = (firstNumber, secondNumber, oddIncreasement) =>
+    Array.from(
+      { length: Math.floor((secondNumber - firstNumber) / oddIncreasement) },
+      (_, i) => firstNumber + i * oddIncreasement
+    );
+  return result(1, len, 2);
 }
+// len.forEach((element) => {
+//   len.push(element) % 2 !== 0;
+// });
+// const arr = Array.from({ length: len }, (x) => x.push());
+// return arr;
+// // for (const elem of len) {
+// // const even = elem %
+
+// // }
+// // const result = [];
+// // for (let i = 1; i <= len; i + 2) result.push(i);
+// // return result;
+// const result = (firstNumber, secondNumber, oddIncreasement) =>
+//   Array.from(
+//     { length: Math.floor((secondNumber - firstNumber) / oddIncreasement) },
+//     (i) => firstNumber + i / oddIncreasement
+//   );
+// return result(1, len, 2);
 
 /**
  * Returns the doubled array - elements of the specified array
