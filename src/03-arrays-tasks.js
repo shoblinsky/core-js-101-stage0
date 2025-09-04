@@ -34,16 +34,23 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
-  // // function generateOdds(len) {
-  // const result = (firstNumber, secondNumber, oddIncreasement) =>
-  //   Array.from(
-  //     { length: Math.floor((secondNumber - firstNumber) / oddIncreasement) },
-  //     (_, i) => firstNumber + i * oddIncreasement
-  //   );
-  // return result(1, len, 2);
+function generateOdds(len) {
+  // let finalArray = Array(50).keys.fill().map((i, len) => i)
+  // let finalArray = Array(len).fill().map((v, i) => i).filter((odd) => odd % 2 == 0);
+  // return finalArray;
+  const finalArray = Array(len * 2)
+    .fill()
+    .map((j, i) => i)
+    .filter((odd) => odd % 2 !== 0);
+  return finalArray;
 }
+// // function generateOdds(len) {
+// const result = (firstNumber, secondNumber, oddIncreasement) =>
+//   Array.from(
+//     { length: Math.floor((secondNumber - firstNumber) / oddIncreasement) },
+//     (_, i) => firstNumber + i * oddIncreasement
+//   );
+// return result(1, len, 2);
 // len.forEach((element) => {
 //   len.push(element) % 2 !== 0;
 // });
